@@ -1,4 +1,4 @@
-package ageria.u5s5l1.entities;
+package ageria.u5s5l2.entities;
 
 import lombok.*;
 
