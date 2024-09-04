@@ -1,13 +1,4 @@
-package ageria.u5s5l2.entities;
-
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-
-
+package ageria.u5s5l3.entities;
 
 
 public class Drink extends Product{

@@ -1,9 +1,9 @@
-package ageria.u5s5l2;
+package ageria.u5s5l3;
 
 
-import ageria.u5s5l2.entities.*;
-import ageria.u5s5l2.enums.StatoOrdine;
-import ageria.u5s5l2.enums.TableStatus;
+import ageria.u5s5l3.entities.*;
+import ageria.u5s5l3.enums.StatoOrdine;
+import ageria.u5s5l3.enums.TableStatus;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

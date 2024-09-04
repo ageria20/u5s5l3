@@ -1,7 +1,6 @@
-package ageria.u5s5l2.entities;
+package ageria.u5s5l3.entities;
 
-import ageria.u5s5l2.enums.StatoOrdine;
-import org.springframework.stereotype.Component;
+import ageria.u5s5l3.enums.StatoOrdine;
 
 import java.time.LocalDateTime;
 import java.util.List;

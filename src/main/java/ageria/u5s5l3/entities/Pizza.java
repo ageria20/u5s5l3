@@ -1,7 +1,6 @@
-package ageria.u5s5l2.entities;
+package ageria.u5s5l3.entities;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter

@@ -1,8 +1,8 @@
-package ageria.u5s5l2;
+package ageria.u5s5l3;
 
 
-import ageria.u5s5l2.entities.Menu;
-import ageria.u5s5l2.entities.Ordine;
+import ageria.u5s5l3.entities.Menu;
+import ageria.u5s5l3.entities.Ordine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

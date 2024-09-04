@@ -1,12 +1,6 @@
-package ageria.u5s5l2.entities;
+package ageria.u5s5l3.entities;
 
-import ageria.u5s5l2.enums.TableStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Component;
-
+import ageria.u5s5l3.enums.TableStatus;
 
 
 public class Tavolo {
