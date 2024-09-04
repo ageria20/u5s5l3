@@ -6,20 +6,26 @@ import ageria.u5s5l3.enums.TableStatus;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
 class U5s5l2ApplicationTests {
 private Ordine order;
 private List<Product> productList;
+
+@Autowired
+private ApplicationContext ctx;
 
 	@BeforeAll
 	static void setUp(){
@@ -49,6 +55,26 @@ private List<Product> productList;
 		double total = order.getTotal();
 		order.printOrder();
 		assertEquals(26.98, total);
+	}
+
+	@Test
+	void checkPizza(){
+		Pizza pizzaWrustel = (Pizza) ctx.getBean("pizzaWrustel");
+		Pizza pinkPizza = (Pizza) ctx.getBean("pinkPizza");
+		Pizza pizzaTonnoCipolla = (Pizza) ctx.getBean("pizzaTonnoCipolla");
+
+		assertAll(
+				() -> assertNotNull(pizzaWrustel),
+				() -> assertNotNull(pinkPizza),
+				() -> assertNotNull(pizzaTonnoCipolla)
+		);
+	}
+
+	@Test
+	void checkMenu(){
+		Menu menu = (Menu) ctx.getBean("getMenu");
+		assertNotNull(menu);
+		System.out.println(menu);
 	}
 
 	@ParameterizedTest

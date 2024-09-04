@@ -14,8 +14,7 @@ public class Runner implements CommandLineRunner {
     @Autowired
     private Menu menu;
 
-    @Autowired
-    private ProductConfig products;
+    
 
 
     @Override
