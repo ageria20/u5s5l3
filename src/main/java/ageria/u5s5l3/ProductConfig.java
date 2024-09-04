@@ -105,7 +105,7 @@ public class ProductConfig {
         order.add(coke);
         order.add(beer);
 
-        return new Ordine(tb1(), order, 1, StatoOrdine.PRONTO, 6, LocalDateTime.of(2024, 9, 3, 20,30), Double.parseDouble(coperto));
+        return new Ordine(tb1(), order, 1, StatoOrdine.PRONTO, 6, LocalDateTime.of(2024, 9, 3, 20,30));
     }
 
 }

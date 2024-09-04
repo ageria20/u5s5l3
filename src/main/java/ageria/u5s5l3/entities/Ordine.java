@@ -15,14 +15,15 @@ public class Ordine {
     private LocalDateTime oraAcquisizione;
     private double total;
 
-    public Ordine(Tavolo tavolo, List<Product> productList, long numeroOrdine, StatoOrdine statoOrdine, int coperti, LocalDateTime oraAcquisizione, double total) {
+    public Ordine(Tavolo tavolo, List<Product> productList, long numeroOrdine, StatoOrdine statoOrdine, int coperti, LocalDateTime oraAcquisizione) {
         this.tavolo = tavolo;
         this.productList = productList;
         this.numeroOrdine = numeroOrdine;
         this.statoOrdine = statoOrdine;
         this.coperti = coperti;
-        this.oraAcquisizione = oraAcquisizione;
-        this.total = total;
+        this.oraAcquisizione = LocalDateTime.now();
+        this.total = orderCheck(2.00);
+
     }
 
 
@@ -39,10 +40,23 @@ public class Ordine {
         System.out.println("-------------------------");
 
         System.out.println("Tavolo" + this.tavolo.getTbNum());
+        System.out.println("");
         System.out.println("Date" + this.oraAcquisizione);
+        System.out.println("");
         this.productList.forEach(System.out::println);
         System.out.println("Numero coperti: " + this.coperti);
-        System.out.println("Totale: " + this.total);
 
+        System.out.println("-------------------------");
+        System.out.println("Totale: " + this.total);
+        System.out.println("-------------------------");
+
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
