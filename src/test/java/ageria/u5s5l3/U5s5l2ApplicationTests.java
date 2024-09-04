@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class U5s5l2ApplicationTests {
 private Ordine order;
-private static List<Product> productList;
+private List<Product> productList;
 
 	@BeforeAll
 	static void setUp(){
@@ -59,8 +59,8 @@ private static List<Product> productList;
 		assertEquals(expectedTotal, getTotal);
 	}
 
-	@AfterAll
-	static void clear(){
+	@AfterEach
+	void clearAll(){
 		System.out.println("PULISCO TUTTO");
 		productList.clear();
 		System.out.println(productList);
