@@ -21,19 +21,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class U5s5l2ApplicationTests {
-private Ordine order;
-private List<Product> productList;
+private static Ordine order;
+private static List<Product> productList;
 
 @Autowired
 private ApplicationContext ctx;
 
-	@BeforeAll
-	static void setUp(){
-		System.out.println("INIZIALIZZO TUTTO");
-	}
+	
 
-	@BeforeEach
-	 void setUpTesting(){
+	@BeforeAll
+	 static void setUpTesting(){
+		System.out.println("INIZIALIZZO TUTTO");
 		Topping ham = new Topping("ham");
 		Topping wrustel = new Topping("ham");
 		Pizza hamPizza = new Pizza(5.99, "Ham Pizza", 600, ham);
@@ -55,6 +53,18 @@ private ApplicationContext ctx;
 		double total = order.getTotal();
 		order.printOrder();
 		assertEquals(26.98, total);
+	}
+	@Test
+    void checkDrink(){
+		Drink coke = (Drink) ctx.getBean("coke");
+		Drink fanta = (Drink) ctx.getBean("fanta");
+		Drink beer = (Drink) ctx.getBean("beer");
+		assertAll(
+				() -> assertEquals(2.00, coke.getPrice()),
+				() -> assertEquals(3, fanta.getPrice()),
+				() -> assertEquals(5, beer.getPrice())
+        );
+
 	}
 
 	@Test
@@ -85,8 +95,8 @@ private ApplicationContext ctx;
 		assertEquals(expectedTotal, getTotal);
 	}
 
-	@AfterEach
-	void clearAll(){
+	@AfterAll
+	static void clearAll(){
 		System.out.println("PULISCO TUTTO");
 		productList.clear();
 		System.out.println(productList);

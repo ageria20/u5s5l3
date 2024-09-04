@@ -40,7 +40,7 @@ public class ProductConfig {
 
     @Bean(name="coke")
     public Drink getCoke(){
-        return new Drink("Coke", 3, 11, 0.33);
+        return new Drink("Coke", 2, 11, 0.33);
     }
 
     @Bean(name="pizzaWrustel")
